@@ -82,11 +82,10 @@ public class MySQLAdsDao implements Ads {
 
 
     @Override
-    public static void deleteAd(Ad ad) {
+    public void deleteAd(Ad ad) {
 
         try{
             PreparedStatement stmt = connection.prepareStatement("UPDATE ads SET is_deleted=? WHERE id=?");
-
 
             stmt.setBoolean(1, true);
             stmt.setLong(2, ad.getId());

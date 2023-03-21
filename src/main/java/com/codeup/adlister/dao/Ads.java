@@ -12,4 +12,5 @@ public interface Ads {
 
     void deleteAd(Ad ad);
 
+    Ad getUsersDao(long id);
 }

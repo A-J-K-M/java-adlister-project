@@ -1,7 +1,6 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
-import com.codeup.adlister.util.Password;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdsDao implements Ads {
-    private Connection connection = null;
+    private static Connection connection = null;
 
     public MySQLAdsDao(Config config) {
         try {
@@ -82,6 +81,23 @@ public class MySQLAdsDao implements Ads {
     }
 
 
+    @Override
+    public static void deleteAd(Ad ad) {
+
+        try{
+            PreparedStatement stmt = connection.prepareStatement("UPDATE ads SET is_deleted=? WHERE id=?");
+
+
+            stmt.setBoolean(1, true);
+            stmt.setLong(2, ad.getId());
+
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating Profile information", e);
+        }
+
+    }
 
 
 }

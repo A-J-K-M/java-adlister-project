@@ -1,41 +1,40 @@
-package com.codeup.adlister.controllers;
-
+package controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.dao.ListAdsDao;
-import com.codeup.adlister.dao.MySQLAdsDao;
 import com.codeup.adlister.models.Ad;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/ads/delete")
-public class AdsDeleteServlet {
+@WebServlet(name = "DeleteAdServlet", urlPatterns = "/ad/delete")
 
-
+public class DeleteAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // Get the ID of the ad to be deleted from the request parameter
-        int adId = Integer.parseInt(request.getParameter("adId"));
 
-        // Delete the ad from the database or storage
-        boolean isDeleted = DaoFactory.deleteAd(adId); // Assuming AdDAO is your data access object class
 
-        // Redirect the user to the ads page with a success or error message
-        if (isDeleted) {
-            response.sendRedirect(request.getContextPath() + "/ads?success=Ad+deleted+successfully");
+        long id = Long.parseLong(request.getParameter("id"));
+        Ad ad = DaoFactory.getAdsDao().getUsersDao(id);
+        DaoFactory.getAdsDao().deleteAd(ad);
+
+        if (request.getSession().getAttribute("user") != null) {
+            response.sendRedirect("/profile");
+            return;
         } else {
-            response.sendRedirect(request.getContextPath() + "/ads?error=Failed+to+delete+ad");
+            response.sendRedirect("/home");
         }
-    }
-
 
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        request.getRequestDispatcher("/WEB-INF/");
 
-
+    }
+}
 

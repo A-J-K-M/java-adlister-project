@@ -1,8 +1,8 @@
 package com.codeup.adlister.models;
 
 public class Ad {
-    private long id;
-    private long userId;
+    private static long id;
+    private static long userId;
     private String title;
     private String description;
     private String img_url;
@@ -51,7 +51,7 @@ public class Ad {
     }
 
 
-    public long getId() {
+    public static long getId() {
         return id;
     }
 
@@ -59,7 +59,7 @@ public class Ad {
         this.id = id;
     }
 
-    public long getUserId() {
+    public static long getUserId() {
         return userId;
     }
 
@@ -114,4 +114,7 @@ public class Ad {
     public void setAge(int age) {
         this.age = age;
     }
+
+
+
 }

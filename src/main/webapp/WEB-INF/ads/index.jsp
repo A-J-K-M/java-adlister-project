@@ -63,10 +63,6 @@ Modify ad index view to turn each ad into a div with at least the name of the ad
             <h2>${ad.title}</h2>
             <img src="${ad.img_url}">
             <p>${ad.description}</p>
-
-            <h2><a href="/ads/delete?id=<%= Ad.getId() %>">
-                <%= Ad.getUserId() %></a></h2>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal<%= Ad.getId() %>">Delete</button>
             <hr>
     </c:forEach>
 </div>

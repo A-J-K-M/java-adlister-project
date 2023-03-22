@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Ads {
+abstract class MySQLAdsDao implements Ads {
     private static Connection connection = null;
 
     public MySQLAdsDao(Config config) {

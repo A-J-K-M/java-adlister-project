@@ -1,5 +1,7 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Ad;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,7 +14,12 @@ public class DaoFactory {
 
     public static Ads getAdsDao() {
         if (adsDao == null) {
-            adsDao = new MySQLAdsDao(config);
+            adsDao = new MySQLAdsDao(config) {
+                @Override
+                public Ad getUsersDao(long id) {
+                    return null;
+                }
+            };
         }
         return adsDao;
     }

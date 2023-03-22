@@ -2,7 +2,7 @@ package com.codeup.adlister.models;
 
 public class Ad {
     private static long id;
-    private static long userId;
+    public static long userId;
     private String title;
     private String description;
     private String img_url;

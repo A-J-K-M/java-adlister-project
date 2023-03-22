@@ -27,6 +27,7 @@
 <%--UPDATE USERS EMAIL & PASSWORD--%>
 <form>
   <h2>Update Email and Password</h2>
+
   <c:if test="${not empty param.email and not empty param.password}">
     <c:set var="email" value="${param.email}" />
     <c:set var="password" value="${param.password}" />

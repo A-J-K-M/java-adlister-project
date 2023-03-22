@@ -30,14 +30,13 @@ public class DeleteUserServlet extends HttpServlet {
 
     private void deleteUserFromDatabase(int userId) {
         String jdbcUrl = "jdbc:mysql://localhost/adlister_project_db";
-        String jdbcUsername = "myusername";
-        String jdbcPassword = "mypassword";
+
 
         try {
-            Connection connection = DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword);
+            Connection connection = DriverManager.getConnection(jdbcUrl , "root", "codeup");
 
             // create a prepared statement to delete the user with the given id
-            PreparedStatement ps = connection.prepareStatement("DELETE FROM users WHERE username = ?");
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM users WHERE id = ?");
             ps.setInt(1, userId);
 
             // execute the delete statement

@@ -28,10 +28,12 @@ public class RegisterServlet extends HttpServlet {
                 || password.isEmpty()
                 || (! password.equals(passwordConfirmation));
 
+
         if (inputHasErrors) {
             response.sendRedirect("/register");
             return;
         }
+
 
         // create and save a new user
         User user = new User(username, email, password);

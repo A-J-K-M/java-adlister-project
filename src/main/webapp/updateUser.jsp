@@ -25,7 +25,7 @@
     console.log("update user jsp")
     setTimeout(
         function(){
-            window.location = "/profile"
+            window.location = "/updateUser.jsp"
         },
         3000);
 </script>

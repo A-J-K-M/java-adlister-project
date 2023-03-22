@@ -1,0 +1,259 @@
+
+html,body {
+    height: 400vh;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    cursor:url(../icons/cursor_gauntlet_blue.png), auto;
+    overflow-x: hidden;
+}
+:root {
+    --clr-one: rgb(255, 20, 147);
+    --clr-two: rgb(127, 255, 0);
+    --clr-three: rgb(138, 43, 226);
+    --clr-bg: #1d1e22;
+}
+#hero-text {
+    animation: heroText 10s linear infinite;
+    border: var(--clr-two) 0.125em solid;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-two), 0 0 0.5em 0 var(--clr-two);
+    color: white;
+    font-family: "Balsamiq Sans", Charm, serif;
+    font-size:2em;
+    padding: .3em;
+    position: absolute;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em deeppink;
+    transform: translate(210%, 330%);
+    z-index: 6;
+}
+#hero-text:hover {
+    border: var(--clr-one) 0.15em solid;
+    color:orangered;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-one), 0 0 0.5em .2em var(--clr-one);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-bg);
+    transition:text-shadow 1s linear, border 1s linear,box-shadow 1s linear, color 1s linear;
+}
+@keyframes heroText {
+    0% {
+        opacity: 1;
+    }
+    4% {
+        opacity: .3;
+    }
+    5% {
+        opacity: .6;
+        /*text-shadow:*/ /*Twice is too much i think*/
+        /*        5px 5px 3px rgba(200,244,181,0.8),*/
+        /*        10px 10px 6px rgba(208,234,186,0.65),*/
+        /*        15px 15px 9px rgba(216,224,191,0.5),*/
+        /*        20px 20px 12px rgba(210,210,210,0.35);*/
+    }
+    6% {
+        opacity: .3;
+
+    }
+    7% {
+        opacity: .7;
+    }
+    8% {
+        opacity: .3;
+        text-shadow:
+                5px 5px 3px rgba(200,244,181,0.8),
+                10px 10px 6px rgba(208,234,186,0.65),
+                15px 15px 9px rgba(216,224,191,0.5),
+                20px 20px 12px rgba(210,210,210,0.35);
+    }
+    9% {
+        opacity: .7;
+    }
+    10% {
+        opacity: .6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+.background-container{
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+}
+.container {
+    display: flex;
+    width: 330px;
+    height: 480px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.starsAll {
+    background: black url(../img/stars.png) repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 4;
+}
+
+.twinkling{
+    width:10000px;
+    height: 100%;
+    background: transparent url(../img/twinkling.png) repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+    animation:move-background 70s linear infinite;
+
+}
+.clouds{
+    width:800vh;
+    height: 100%;
+    background: transparent url(../img/clouds_repeat.png);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 7;
+    animation:move-background 150s linear infinite;
+}
+#moon{
+    background:transparent;
+    height: 70vh;
+    width:70vh;
+    position: absolute;
+    z-index: 6;
+    right: 20px;
+    animation: updown 16s linear infinite;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(4%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+.background-container{
+    position: fixed;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+}
+a,button {
+    cursor:url(../icons/cursor_gauntlet.png), auto;
+}
+
+
+#floatyHands {
+    position:relative;
+    transform:translate(-130%,-30%);
+    filter:contrast(100%) brightness(90%) hue-rotate(90deg) blur(2px);
+    scale: 0.32;
+    background:transparent;
+    z-index:0;
+    animation: floatyHands linear 5s infinite;
+}
+
+#purpleOrb {
+    position:relative;
+    top:-830px;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: whipple linear 2s infinite
+}
+.orbSection {
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+}
+.row {
+    flex-basis: content;
+    justify-content: center;
+    align-content: center;
+}
+@keyframes whipple {
+    0% {
+        transform: translateY(0%);
+        box-shadow:
+                inset 0 0 50px #fff,      /* inner white */
+                inset 20px 0 80px #f0f,   /* inner left magenta short */
+                inset -20px 0 80px #0ff,  /* inner right cyan short */
+                inset 20px 0 300px #f0f,  /* inner left magenta broad */
+                inset -20px 0 300px #0ff, /* inner right cyan broad */
+                0 0 50px #fff,            /* outer white */
+                -10px 0 80px #f0f,        /* outer left magenta */
+                10px 0 80px #0ff;         /* outer right cyan */
+    }
+    50% {
+        transform: translateY(2%);
+        box-shadow:
+                inset 0 0 20px #fff,
+                inset 20px 0 80px #f0f,
+                inset 20px 0 80px #0ff,
+                inset 20px 0 300px #f0f,
+                inset -50px 0 300px #0ff,
+                0 0 10px #fff,
+                -10px 0 80px #f0f,
+                10px 0 80px #0ff;
+    }
+    100% {
+        transform: translateY(0%);
+        box-shadow:
+                inset 0 0 50px #fff,
+                inset 20px 0 80px #f0f,
+                inset -20px 0 80px #0ff,
+                inset 20px 0 300px #f0f,
+                inset -20px 0 300px #0ff,
+                0 0 50px #fff,
+                -10px 0 80px #f0f,
+                10px 0 80px #0ff;
+    }
+}
+
+@keyframes floatyHands {
+    0% {
+        transform:translate(-130%,-30%);
+        filter: contrast(100%) brightness(80%) hue-rotate(90deg) blur(2px)
+        drop-shadow(0.55rem 0.95rem 0.8rem rgba(255,140,140, 0.9));
+    }
+    50%{
+        transform:translate(-130%,-34%);
+        filter: contrast(100%) brightness(50%) hue-rotate(140deg) blur(4px)
+        drop-shadow(0.55rem 0.35rem 0.4rem rgba(255,255,255, 0.3));
+    }
+    100%{
+        transform:translate(-130%,-30%);
+        filter: contrast(100%) brightness(80%) hue-rotate(90deg) blur(2px)
+        drop-shadow(0.55rem 0.95rem 0.8rem rgba(255,140,140, 0.9));
+    }
+}
+
+/*Media Queries*/
+
+/*disables parallax effect on smaller than desktop screens*/
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}

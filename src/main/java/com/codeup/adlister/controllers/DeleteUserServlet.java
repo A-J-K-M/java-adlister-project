@@ -23,8 +23,9 @@ public class DeleteUserServlet extends HttpServlet {
         // delete the user from the database
         deleteUserFromDatabase(userId);
 
-        // redirect the user back to the user list page
-        response.sendRedirect(request.getContextPath() + "/login");
+        request.getRequestDispatcher("/WEB-INF/login.jsp")
+                .forward(request, response);
+
     }
 
     private void deleteUserFromDatabase(int userId) {

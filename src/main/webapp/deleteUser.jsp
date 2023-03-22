@@ -29,6 +29,7 @@
     setTimeout(
         function(){
             window.location = "/login"
+
         },
         3000);
 </script>

@@ -201,5 +201,138 @@
         border: 0;
         opacity: 90%;
     }
+    /*profile*/
+    @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;600&display=swap");
+    body {
+        font-family: "Oswald", sans-serif;
+        background-color: #212121;
+    }
+
+    body section {
+        width: 100%;
+        max-width: 19.5%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+    }
+
+    body section .row {
+        align-items: center;
+        height: 28rem;
+    }
+
+    .card {
+        position: relative;
+        height: 400px;
+        width: 100%;
+        /*margin: 10px 0;*/
+        transition: ease all 1.3s;
+        perspective: 1200px;
+    }
+    .card:hover .cover {
+        transform: rotateX(0deg) rotateY(-180deg);
+    }
+    .card:hover .cover:before {
+        transform: translateZ(30px);
+    }
+    .card:hover .cover:after {
+        background-color: black;
+    }
+    .card:hover .cover h1 {
+        transform: translateZ(100px);
+    }
+    .card:hover .cover a {
+        transform: translateZ(-60px) rotatey(-180deg);
+    }
+    .card .cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: ease all 2.3s;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .card .cover:before {
+        content: "";
+        position: absolute;
+        border: 5px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        transition: ease all 2.3s;
+        transform-style: preserve-3d;
+        transform: translateZ(0px);
+    }
+    .card .cover:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+        transition: ease all 1.3s;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .card .cover.item-a {
+
+    }
+
+    .card .cover h1 {
+        font-weight: 600;
+        position: absolute;
+        bottom: 55px;
+        left: 50px;
+        color: white;
+        transform-style: preserve-3d;
+        transition: ease all 2.3s;
+        z-index: 3;
+        font-size: 3em;
+        transform: translateZ(0px);
+    }
+    .card .card-back {
+        position: absolute;
+        top: 56px;
+        height: 36%;
+        width: 90%;
+        background: #0b0f08;
+        transform-style: preserve-3d;
+        transition: ease all 1.5s;
+        transform: translateZ(-1px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .card .card-back a {
+        transform-style: preserve-3d;
+        transition: ease transform 2.3s, ease background 0.5s;
+        transform: translateZ(-1px) rotatey(-180deg);
+        background: transparent;
+        border: 1px solid white;
+        font-weight: 200;
+        font-size: 1.3em;
+        color: white;
+        padding: 14px 32px;
+        outline: none;
+        text-decoration: none;
+    }
+    .card .card-back a:hover {
+        background-color: white;
+        color: #0b0f08;
+    }
+
+
+
+
 
 </style>

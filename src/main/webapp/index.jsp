@@ -22,10 +22,12 @@
         --clr-bg: #1d1e22;
     }
     #magicHolder{
-        top: 234px;
+        position: relative;
+        top: -14px;
         left: 50px;
         z-index: 999;
     }
+
     #hero-sub {
         animation: heroText 6s linear infinite;
         color: white;
@@ -196,8 +198,7 @@
 
 
     #floatyHands {
-        position:absolute;
-        top:-1070px;
+        top:-860px;
         filter:contrast(100%) brightness(90%) hue-rotate(90deg) blur(2px);
         scale: 0.32;
         background:transparent;
@@ -285,16 +286,15 @@
 
 
 </style>
-<!--    <div id="fireflies-container" style="position:absolute;top:0;left:0;width:100vw;height: 500px; background: transparent; z-index:100">-->
 <img id="moon" src="./img/moon.png">
+     <!--Page Wrapper-->
 <div class="clouds"></div>
 <div class="background-container">
-    <div id="fireflies-container" style="width:100%;height: 100%; background: transparent; z-index:100"> <!--Page Wrapper-->
         <div class="starsAll"></div>
         <div class="twinkling"></div>
-    </div> <!--Night Sky -->
-</div>
+<div id="fireflies-container" style="top:-450px;width:100vw;height: 100vh; background: transparent;position:fixed; z-index:100"></div>
 
+    </div> <!--Night Sky -->
 
 <div id="magicHolder" class="container"> <!--og stay together fr fr-->
     <img id="floatyHands" src="./img/floaty_hands.png"> <!--hans-->
@@ -303,7 +303,6 @@
         <h3 id="hero-sub">Fantastic Beasts and Where to Buy Them</h3>
     </div>
 </div>
-
 
 
 

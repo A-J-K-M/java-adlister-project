@@ -22,7 +22,7 @@ html,body {
     position: absolute;
     text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em deeppink;
     transform: translate(210%, 330%);
-    z-index: 6;
+    z-index: 50;
 }
 #hero-text:hover {
     border: var(--clr-one) 0.15em solid;
@@ -249,11 +249,3 @@ a,button {
     }
 }
 
-/*Media Queries*/
-
-/*disables parallax effect on smaller than desktop screens*/
-@media only screen and (max-device-width: 1366px) {
-    .parallax {
-        background-attachment: scroll;
-    }
-}

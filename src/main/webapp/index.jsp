@@ -17,14 +17,14 @@
 <body>
 
 <!--    <div id="fireflies-container" style="position:absolute;top:0;left:0;width:100vw;height: 500px; background: transparent; z-index:100">-->
-<div id="fireflies-container" style="width:100%;height: 100%; background: transparent; z-index:100" class="container page-width"> <!--Page Wrapper-->
+<div id="fireflies-container" style="width:100%;height: 100%; background: transparent; z-index:100"> <!--Page Wrapper-->
 
+        <img id="moon" src="./img/moon.png">
+        <div class="clouds"></div>
+        <a href="#"><span style="z-index:6;" id="hero-text">Mercator Magicis</span></a>
     <div class="background-container">
         <div class="starsAll"></div>
         <div class="twinkling"></div>
-        <div class="clouds"></div>
-        <img id="moon" src="./img/moon.png">
-        <a href="#"><span style="z-index:100;" id="hero-text">Mercator Magicis</span></a>
     </div> <!--Night Sky -->
 </div>
 
